@@ -33,105 +33,137 @@
 body{
     background-color: #181419;
     color:white; 
+    width: 100%;
      /* scrollbar-color: #9f3647  #181419; /*nuevo
      scrollbar-width: thin;*/
 }
 
 /*ESTILOS HEADER PARA ESCRITORIO*/
-.header{
-    background-color:#9f3647;
-    color:#ffffff;
-    height: 10vh;
-    position:sticky;
+.header {
+    background-color: #9f3647;
+    color: #ffffff;
+    height: auto;
+    position: sticky;
     top: 0;
-    z-index:10;
-    .navegacion{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-left:40px;
-        margin-right: 40px;
-        padding: 1.5rem 0;
-        .anclaLogo{
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.2rem;
-            /*animacion hover*/
-            &:hover{
-                animation: tilt-n-move-shaking 0.25s infinite;
-            }
-        }
-        .listaNav{
-            list-style: none;
-            display: flex;
-            align-items: center;
-            .listaItem{
-                margin-right:20px;
-                .linkNav{
-                    text-decoration: none;
-                    color:#ffffff;
-                    font-weight: 700;
-                    font-size: 1.1rem;
-                    padding: 0.5rem 1rem;
-                    /* Agregar efecto de botón presionado */
-                    transition: transform 0.3s, box-shadow 0.3s;
-                    &:hover {
-                        transform: scale(0.95);
-                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-                        border-radius: 5px;
-                    }
-                }
-                .linkNav.iniciarSesion{
-                    background-color: #181419;
-                    color: white;
-                    
-                    border-radius: 5px;
-                     /* Agregar efecto de botón presionado */
-                     transition: transform 0.3s, box-shadow 0.3s;
-                     &:hover {
-                         background-color: #9f3647;
-                        /* transform: scale(0.95);
-                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
-                     }
-                }
-            }
-           
-        }
-    }
-   
-}
-/*ESTILOS PARA HEADER MOBILE Y TABLET*/
+    z-index: 10;
+    width: 100%;
+  }
+  
+  .navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 1.5rem 0;
+  }
+  
+  .anclaLogo {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  
+  .hamburguesa {
+    display: none; 
+  }
+  
+  .listaNav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .listaItem {
+    margin-right: 20px;
+  }
+  
+  .linkNav {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .linkNav:hover {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  }
+  
+  .linkNav.iniciarSesion {
+    background-color: #181419;
+    border-radius: 5px;
+  }
+  
+  .linkNav.iniciarSesion:hover {
+    background-color: #9f3647;
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 1050px) {
 
-@media (max-width: 768px) {
     .header{
         height: initial;
-        .navegacion{
-            margin-left:10px;
-            margin-right: 10px;
-            flex-direction: column;
-            row-gap: 20px;
-            .anclaLogo{
-                font-size: 1.2rem;
-                font-weight:700;
-            }
-            .listaNav{
-               
-                padding:initial;
-                .listaItem{
-                    .linkNav{
-                        font-weight: 400;
-                        margin-right: initial;
-                        font-size: 1rem;
-                        padding: 0.2rem;
-                        
-                    }
-                  
-                }
-            }
-        }
     }
-}
+    .navegacion {
+      margin-left: 0px;
+      margin-right: 0px;
+      row-gap: 20px;
+      position: relative; 
+    }
+  
+    .hamburguesa {
+      display: block;
+      color: #ffffff;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: absolute; 
+      top: 20px; 
+      right: 10px; 
+    }
+  
+    .listaNav {
+      display: none; 
+      position: absolute; 
+      top: 100%; 
+      left: 0;
+      background-color: #9f3647; 
+      width: 100%;
+      z-index: 10; 
+    }
+  
+    .listaNav.mostrar {
+      display: flex; 
+      flex-direction: column;
+    }
+  
+    .listaItem {
+      margin-right: initial;
+    }
+  
+    .linkNav {
+      font-weight: 400;
+      font-size: 1rem;
+      padding: 0.7rem; 
+      display: block; 
+      color: #ffffff; 
+      text-decoration: none; 
+      transition: background-color 0.3s; 
+      margin: 0.5rem;
+    }
+  
+    .linkNav:hover {
+      background-color: #7c2734; 
+    }
+  }
+  
+  
 /*ESTILOS PARA MAIN ESCRITORIO*/
 .main{
     .sectionPrincipal{
@@ -145,6 +177,7 @@ body{
         justify-content: center;
         align-items: center;
         text-align: center;
+        width: 100%;
         .tituloPrincipal{
             font-size: 4rem;
             font-weight: 700;
@@ -390,6 +423,8 @@ body{
                 font-size: 1.6rem;
             }
             .buscadorPeliculas{
+                display: flex;
+                flex-direction: column;
                 .inputBuscador{
                     font-size: 1rem;
                     height: 40px;
@@ -462,14 +497,15 @@ body{
 .footer{
     background-color:#9f3647;
     color:#ffffff;
-    height: 15vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    .listaNav{
+    .listaNavFooter{
         list-style: none;
         display: flex;
         align-items: center;
+       
         .listaItem{
             margin-left:20px;
             .linkNav{
@@ -494,16 +530,15 @@ body{
         cursor: pointer;
     }
 }
+
 /*ESTILOS FOOTER CELULAR Y TABLET CHICA*/
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
     .footer{
-        height: initial;
+        
         padding-top:15px;
         padding-bottom: 20px;
-        .listaNav{
+        .listaNavFooter{
             flex-direction: column;
-           
-            row-gap: 15px;
             .listaItem{
                 
                 .linkNav{
@@ -964,4 +999,17 @@ hr{
         }
     }
 
+}
+
+.movie {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.movie img {
+    width: 100px;
+    margin-right: 20px;
+}
+.movie-details {
+    max-width: 600px;
 }
